@@ -2,10 +2,17 @@ package application;
 
 import java.util.Optional;
 
+import javax.naming.spi.DirStateFactory.Result;
+
+import org.omg.CosNaming.NamingContextPackage.AlreadyBound;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.util.Pair;
 
 public class DialogControl {
 	public static void showFileSaveError()
@@ -50,9 +57,41 @@ public class DialogControl {
 		return 1;
 	}
 	
+	public static void findPrompt(String srcString)
+	{
+		//Dialog<>
+	}
+	
+	public static String turnPrompt()
+	{
+		TextInputDialog dialog = new TextInputDialog("1");
+		dialog.setTitle("转到指定行");
+		dialog.setContentText("行号(L):");
+		while(true)
+		{
+			Optional<String> resutlt = dialog.showAndWait();
+			if(resutlt.isPresent()==false) return null;//取消选择
+			if(resutlt.get().matches("\\d")) return resutlt.get();
+			else {
+				Alert alert  = new Alert(AlertType.ERROR);
+				alert.setContentText("不能接受的字符，请输入数字");
+				alert.showAndWait();
+			}
+		}
+	}
+	
+	public static void notFoundPrompt(String queryString)
+	{
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setContentText("找不到"+queryString);
+		alert.showAndWait();
+	}
+	
 	private static void showFileError(Alert alert)
 	{
 		alert.setTitle("Warning Dialog");
 		alert.setHeaderText("文件操作失败");
 	}
+	
+	
 }
