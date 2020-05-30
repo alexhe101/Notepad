@@ -8,116 +8,137 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane fx:id="borderPane" prefHeight="540.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainScreenController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="文件(F)">
-            <items>
-              <MenuItem fx:id="newButton" mnemonicParsing="false" onAction="#clickNewFileButton" text="新建(N)">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="文件(F)">
+					<items>
+						<MenuItem fx:id="newButton" mnemonicParsing="false" onAction="#clickNewFileButton" text="新建(N)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="newWindowButton" mnemonicParsing="false" onAction="#clickNewWindowButton" text="新窗口(W)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="openButton" mnemonicParsing="false" onAction="#clickOpenFileButton" text="打开(O) ">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#clickSaveFileButton" text="保存(S)   ">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="saveAsButton" mnemonicParsing="false" onAction="#clickSaveAsButton" text="另存为(A)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#clickExitButton" text="退出(X)" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="编辑(E)">
+					<items>
+						<MenuItem fx:id="cancelButton" disable="true" mnemonicParsing="false" onAction="#clickCancelButton" text="撤销(U)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="cutButton" disable="true" mnemonicParsing="false" onAction="#clickCutButton" text="剪切(T)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="copyButton" disable="true" mnemonicParsing="false" onAction="#clickCopyButton" text="复制(C)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="pasteButton" disable="true" mnemonicParsing="false" onAction="#clickPasteButton" text="粘贴(P)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="deleteButton" disable="true" mnemonicParsing="false" onAction="#clickDeleteButton" text="删除(L)" />
+						<MenuItem fx:id="findButton" disable="true" mnemonicParsing="false" onAction="#clickFindButton" text="查找(F)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="findNext" disable="true" mnemonicParsing="false" onAction="#clickFindNextButton" text="查找下一个(N)" />
+						<MenuItem fx:id="findPrev" disable="true" mnemonicParsing="false" onAction="#clickFindPrevButton" text="查找上一个(V）">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="F3" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="replaceButton" mnemonicParsing="false" onAction="#clickReplaceButton" text="替换(R)">
                      <accelerator>
-                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem fx:id="newWindowButton" mnemonicParsing="false" onAction="#clickNewWindowButton" text="新窗口(W)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="openButton" mnemonicParsing="false" onAction="#clickOpenFileButton" text="打开(O) ">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#clickSaveFileButton" text="保存(S)   ">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="saveAsButton" mnemonicParsing="false" onAction="#clickSaveAsButton" text="另存为(A)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#clickExitButton" text="退出(X)" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="编辑(E)">
-            <items>
-                  <MenuItem fx:id="cancelButton" disable="true" mnemonicParsing="false" onAction="#clickCancelButton" text="撤销(U)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-              <MenuItem fx:id="cutButton" disable="true" mnemonicParsing="false" onAction="#clickCutButton" text="剪切(T)                     Ctrl+X">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="copyButton" disable="true" mnemonicParsing="false" onAction="#clickCopyButton" text="复制(C)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="pasteButton" disable="true" mnemonicParsing="false" onAction="#clickPasteButton" text="粘贴(P)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="deleteButton" disable="true" mnemonicParsing="false" onAction="#clickDeleteButton" text="删除(L)" />
-                  <MenuItem fx:id="findButton" disable="true" mnemonicParsing="false" onAction="#clickFindButton" text="查找(F)                      Ctrl+F" />
-                  <MenuItem fx:id="findNext" disable="true" mnemonicParsing="false" onAction="#clickFindNextButton" text="查找下一个(N）               F3" />
-                  <MenuItem fx:id="findPrev" disable="true" mnemonicParsing="false" onAction="#clickFindPrevButton" text="查找上一个(V）      Shift+F3" />
-                  <MenuItem fx:id="replaceButton" mnemonicParsing="false" onAction="#clickReplaceButton" text="替换(R)                     Ctrl+H" />
-                  <MenuItem fx:id="turnButton" mnemonicParsing="false" onAction="#clickTurnButton" text="转到(G)                     Ctrl+G" />
-                  <MenuItem fx:id="selectAllButton" mnemonicParsing="false" onAction="#clickSelectAllButton" text="全选(A)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="timeButton" mnemonicParsing="false" onAction="#clickTimeButton" text="时间/日期(D)" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="格式(O)">
-            <items>
-                  <CheckMenuItem fx:id="changLineCheck" mnemonicParsing="false" onAction="#clickChangeLineCheck" text="自动换行(W)" />
-                  <MenuItem fx:id="frontMenuItem" mnemonicParsing="false" onAction="#clickFrontMenuItem" text="字体(F)..." />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="查看(V)">
-              <items>
-                  <Menu mnemonicParsing="false" text="缩放(Z)">
-                    <items>
-                      <MenuItem fx:id="scaleUpButton" mnemonicParsing="false" onAction="#clickZoomUpButton" text="放大(I)             Ctrl+加号" />
-                        <MenuItem fx:id="scaleDownButton" mnemonicParsing="false" onAction="#clickZoomDownButton" text="缩小(O)           Ctrl+减号" />
-                        <MenuItem fx:id="resetButton" mnemonicParsing="false" onAction="#clickResetButton" text="恢复默认缩放       Ctrl+0" />
-                    </items>
-                  </Menu>
-                  <CheckMenuItem fx:id="statusCheck" mnemonicParsing="false" onAction="#ClickStatusCheckButton" selected="true" text="状态栏(S)" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="帮助(H)">
-              <items>
-                <MenuItem fx:id="aboutButton" mnemonicParsing="false" onAction="#clickAboutButton" text="关于记事本(A)" />
-              </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-   <center>
-      <TextArea fx:id="textArea" prefHeight="478.0" prefWidth="382.0" BorderPane.alignment="CENTER" />
-   </center>
-   <bottom>
-      <GridPane fx:id="gridPane" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="59.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="53.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="119.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="65.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label fx:id="indexLabel" prefHeight="20.0" prefWidth="103.0" text="第1行,第1列" GridPane.columnIndex="1" />
-            <Label fx:id="zoomLabel" prefHeight="20.0" prefWidth="91.0" text="100%" GridPane.columnIndex="2" />
-            <Label text="Windows(CRLF)" GridPane.columnIndex="3" />
-            <Label prefHeight="20.0" prefWidth="87.0" text="UTF-8" GridPane.columnIndex="4" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.halignment="RIGHT" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
-         </children>
-      </GridPane>
-   </bottom>
+						<MenuItem fx:id="turnButton" mnemonicParsing="false" onAction="#clickTurnButton" text="转到(G)                     Ctrl+G" />
+						<MenuItem fx:id="selectAllButton" mnemonicParsing="false" onAction="#clickSelectAllButton" text="全选(A)">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="timeButton" mnemonicParsing="false" onAction="#clickTimeButton" text="时间/日期(D)" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="格式(O)">
+					<items>
+						<CheckMenuItem fx:id="changLineCheck" mnemonicParsing="false" onAction="#clickChangeLineCheck" text="自动换行(W)" />
+						<MenuItem fx:id="frontMenuItem" mnemonicParsing="false" onAction="#clickFrontMenuItem" text="字体(F)..." />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="查看(V)">
+					<items>
+						<Menu mnemonicParsing="false" text="缩放(Z)">
+							<items>
+								<MenuItem fx:id="scaleUpButton" mnemonicParsing="false" onAction="#clickZoomUpButton" text="放大(I)             Ctrl+加号" />
+								<MenuItem fx:id="scaleDownButton" mnemonicParsing="false" onAction="#clickZoomDownButton" text="缩小(O)           Ctrl+减号" />
+								<MenuItem fx:id="resetButton" mnemonicParsing="false" onAction="#clickResetButton" text="恢复默认缩放       Ctrl+0" />
+							</items>
+						</Menu>
+						<CheckMenuItem fx:id="statusCheck" mnemonicParsing="false" onAction="#ClickStatusCheckButton" selected="true" text="状态栏(S)" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="帮助(H)">
+					<items>
+						<MenuItem fx:id="aboutButton" mnemonicParsing="false" onAction="#clickAboutButton" text="关于记事本(A)" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<TextArea fx:id="textArea" prefHeight="478.0" prefWidth="382.0" BorderPane.alignment="CENTER" />
+	</center>
+	<bottom>
+		<GridPane fx:id="gridPane" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="59.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="53.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="119.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="65.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label fx:id="indexLabel" prefHeight="20.0" prefWidth="103.0" text="第1行,第1列" GridPane.columnIndex="1" />
+				<Label fx:id="zoomLabel" prefHeight="20.0" prefWidth="91.0" text="100%" GridPane.columnIndex="2" />
+				<Label text="Windows(CRLF)" GridPane.columnIndex="3" />
+				<Label prefHeight="20.0" prefWidth="87.0" text="UTF-8" GridPane.columnIndex="4" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.halignment="RIGHT" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+			</children>
+		</GridPane>
+	</bottom>
 </BorderPane>

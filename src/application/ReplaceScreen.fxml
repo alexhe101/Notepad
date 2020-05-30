@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane prefHeight="265.0" prefWidth="517.0"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="application.ReplaceScreenController">
+	<top>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="168.0" minWidth="10.0" prefWidth="110.0" />
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="285.0" minWidth="10.0" prefWidth="268.0" />
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="133.0" minWidth="10.0" prefWidth="133.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="25.0" minHeight="10.0"
+					prefHeight="14.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="46.0" minHeight="10.0"
+					prefHeight="40.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="45.0" minHeight="10.0"
+					prefHeight="40.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label text="查找内容为(N):" GridPane.halignment="LEFT"
+					GridPane.rowIndex="1">
+					<GridPane.margin>
+						<Insets left="5.0" />
+					</GridPane.margin>
+				</Label>
+				<Label text="替换为(P):" GridPane.halignment="LEFT"
+					GridPane.rowIndex="2">
+					<GridPane.margin>
+						<Insets left="5.0" />
+					</GridPane.margin>
+				</Label>
+				<TextField fx:id="queryTextField" GridPane.columnIndex="1"
+					GridPane.rowIndex="1" />
+				<TextField fx:id="replaceTextField"
+					GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<Button fx:id="findNextButton" mnemonicParsing="false"
+					onAction="#clickFindNextButton" text="查找下一个(F)"
+					GridPane.columnIndex="2" GridPane.halignment="CENTER"
+					GridPane.rowIndex="1" />
+				<Button fx:id="replaceButton" mnemonicParsing="false"
+					onAction="#clickReplaceButton" prefHeight="30.0" prefWidth="114.0"
+					text="替换(R)" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+					GridPane.rowIndex="2" />
+			</children>
+		</GridPane>
+	</top>
+	<right>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="95.0" minWidth="10.0" prefWidth="77.0" />
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="128.0" minWidth="10.0" prefWidth="123.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="52.0" minHeight="10.0"
+					prefHeight="22.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="92.0" minHeight="10.0"
+					prefHeight="92.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Button fx:id="replaceAllButton" mnemonicParsing="false"
+					onAction="#clickReplaceAllButton" prefHeight="30.0"
+					prefWidth="113.0" text="全部替换" GridPane.columnIndex="1"
+					GridPane.valignment="TOP" />
+				<Button fx:id="cancelButton" mnemonicParsing="false"
+					onAction="#clickCancelButton" prefHeight="30.0" prefWidth="114.0"
+					text="取消" GridPane.columnIndex="1" GridPane.rowIndex="1"
+					GridPane.valignment="TOP" />
+			</children>
+		</GridPane>
+	</right>
+	<left>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="130.0" minWidth="10.0" prefWidth="130.0" />
+				<ColumnConstraints hgrow="SOMETIMES"
+					maxWidth="95.0" minWidth="10.0" prefWidth="70.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<CheckBox fx:id="spellCheck" mnemonicParsing="false"
+					text="区分大小写(C)" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+					<GridPane.margin>
+						<Insets left="5.0" />
+					</GridPane.margin>
+				</CheckBox>
+				<CheckBox fx:id="repeatCheck" mnemonicParsing="false"
+					selected="true" text="循环(R)" GridPane.rowIndex="2">
+					<GridPane.margin>
+						<Insets left="5.0" />
+					</GridPane.margin>
+				</CheckBox>
+			</children>
+		</GridPane>
+	</left>
+</BorderPane>
