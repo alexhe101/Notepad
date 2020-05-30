@@ -57,10 +57,6 @@ public class DialogControl {
 		return 1;
 	}
 	
-	public static void findPrompt(String srcString)
-	{
-		//Dialog<>
-	}
 	
 	public static String turnPrompt()
 	{

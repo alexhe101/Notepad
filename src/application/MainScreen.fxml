@@ -48,6 +48,7 @@
 								<KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
 							</accelerator>
 						</MenuItem>
+                  <MenuItem fx:id="redoButton" mnemonicParsing="false" onAction="#clickRedoButton" text="重做" />
 						<MenuItem fx:id="cutButton" disable="true" mnemonicParsing="false" onAction="#clickCutButton" text="剪切(T)">
 							<accelerator>
 								<KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
@@ -76,9 +77,10 @@
 							</accelerator>
 						</MenuItem>
 						<MenuItem fx:id="replaceButton" mnemonicParsing="false" onAction="#clickReplaceButton" text="替换(R)">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
 						<MenuItem fx:id="turnButton" mnemonicParsing="false" onAction="#clickTurnButton" text="转到(G)                     Ctrl+G" />
 						<MenuItem fx:id="selectAllButton" mnemonicParsing="false" onAction="#clickSelectAllButton" text="全选(A)">
 							<accelerator>
